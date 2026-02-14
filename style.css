@@ -364,9 +364,14 @@ footer {
         margin-bottom: 1rem;
     }
 
-    /* 手機上不做 3D 翻轉，改用點擊切換顯示/隱藏，或者保持翻轉但確保高度 */
+    /* 手機上不做 3D 翻轉，改用點擊切換顯示/隱藏 */
     .flashcard {
         transform-style: flat;
+    }
+
+    .flashcard.flipped {
+        transform: none;
+        /* 重要：取消容器旋轉，避免內容變成鏡像 */
     }
 
     .card-back {
