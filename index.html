@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>狄克森片語練習</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Signika+Negative:wght@400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>English Idioms Practice</h1>
+            <p>狄克森片語練習 - 輕鬆學習與測驗</p>
+        </header>
+
+        <div class="mode-selector">
+            <button id="btn-learn" class="mode-btn active">學習模式</button>
+            <button id="btn-quiz" class="mode-btn">測驗模式</button>
+        </div>
+
+        <main id="app-content">
+            <!-- 學習模式區塊 -->
+            <div id="learn-section" class="section active">
+                <div class="card-container">
+                    <div class="flashcard" id="flashcard">
+                        <div class="card-front">
+                            <div class="phrase-header">
+                                <h2 id="card-phrase">Look for</h2>
+                                <button class="audio-btn" id="btn-speak-phrase" title="發音" aria-label="朗讀片語">
+                                    <svg viewBox="0 0 24 24" width="24" height="24">
+                                        <path fill="currentColor"
+                                            d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <p class="instruction">(點擊翻轉)</p>
+                        </div>
+                        <div class="card-back">
+                            <h3 id="card-meaning">尋找</h3>
+                            <div class="example-container">
+                                <p id="card-example">I am looking for my keys.</p>
+                                <button class="audio-btn" id="btn-speak-example" title="朗讀例句" aria-label="朗讀例句">
+                                    <svg viewBox="0 0 24 24" width="20" height="20">
+                                        <path fill="currentColor"
+                                            d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <button id="btn-details" class="details-btn">詳細資料</button>
+                            <div id="card-details" class="card-details hidden">
+                                <!-- Detailed notes will be injected here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button id="btn-prev" class="control-btn">上一張</button>
+                    <span id="counter">1 / 20</span>
+                    <button id="btn-next" class="control-btn">下一張</button>
+                </div>
+            </div>
+
+            <!-- 測驗模式區塊 -->
+            <div id="quiz-section" class="section">
+                <div class="quiz-header">
+                    <div class="progress">題數: <span id="quiz-progress">1 / 10</span></div>
+                    <div class="mode-select-container">
+                        <select id="quiz-mode-select" class="quiz-mode-select">
+                            <option value="meaning">英選中 (Standard)</option>
+                            <option value="cloze">填空題 (Cloze)</option>
+                        </select>
+                    </div>
+                    <div class="score-board">得分: <span id="score">0</span></div>
+                </div>
+                <div class="quiz-card">
+                    <div class="phrase-header">
+                        <h2 id="quiz-question">Look for</h2>
+                        <button class="audio-btn" id="btn-speak-quiz" title="發音" aria-label="朗讀題目">
+                            <svg viewBox="0 0 24 24" width="24" height="24">
+                                <path fill="currentColor"
+                                    d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="options" id="quiz-options">
+                        <!-- 選項會動態生成 -->
+                    </div>
+                </div>
+                <div id="quiz-feedback" class="feedback"></div>
+                <button id="btn-restart" class="control-btn hidden">重新測驗</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Dixson Idioms Practice</p>
+        </footer>
+    </div>
+
+    <script src="data.js?v=3"></script>
+    <script src="script.js?v=3"></script>
+</body>
+
+</html>
