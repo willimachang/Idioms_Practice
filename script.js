@@ -125,7 +125,16 @@ function playSound(type) {
 
 // 初始化
 function init() {
-    updateCard();
+    if (idiomList.length === 0) {
+        alert("Data Error: Phrase database is empty!\nPlease check internet connection or refresh.");
+        return;
+    }
+    try {
+        updateCard();
+    } catch (e) {
+        console.error("Update Card Error:", e);
+        alert("Render Error: " + e.message);
+    }
     setupEventListeners();
 }
 
@@ -580,4 +589,9 @@ function shuffleArray(array) {
     return array;
 }
 
-init();
+try {
+    init();
+} catch (e) {
+    console.error("Init Error:", e);
+    alert("System Error: " + e.message + "\nPlease refresh or clear cache.");
+}
