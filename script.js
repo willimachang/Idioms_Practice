@@ -319,7 +319,7 @@ function loadQuizQuestion() {
         // 依長度排序
         searchTerms.sort((a, b) => b.length - a.length);
 
-        // 常見動詞變話表
+        // 常見動詞變化表
         const verbConjugations = {
             "be": ["be", "is", "am", "are", "was", "were", "been", "being", "'m", "'re", "'s"],
             "do": ["do", "does", "did", "done", "doing"],
